@@ -37,7 +37,7 @@ for x in user_list:
         account_to_update = (gis.users.search(query='email: {}'.format(x))) # creating a variable here is an inelegant hack to create a single User object that can actaully be acted on via using the .search method (which returns a list of User objects) to get the user account associated with the e-mail address
         for account in account_to_update:
             account.update_role(role = jupyter_role)
-            print ("{}'s role has been updated to {}".format(account.username,account.role))
+            print ("{}'s role has been updated to {}".format(account.username,gis.users.roles.get_role(account.roleId).name))
             updated_users.append(account)
 
 print("User roles updated for the following users:")
