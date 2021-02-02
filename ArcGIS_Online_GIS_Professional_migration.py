@@ -53,7 +53,7 @@ for x in arcProList:
 
 # this function is written to process a list of username strings, and not arcgis API user objects
 # it goes through the above list and revokes their ArcPro licenses, upgrades the User Type to GIS Professional Advanced, provisions all the ArcPro extensions to them, and bumps up their credits
-def revokeArcProLicense(userlist):
+def migrateArcProLicense(userlist):
     for name in userlist:
         user = gis.users.get(name)
         print(user.username + " is being processed...")
@@ -76,7 +76,7 @@ def revokeArcProLicense(userlist):
 # evoking the above function
 print("Revoking ArcPro licenses for Creator user types who have them, updating user type, and provisioning ArcPro extensions...")
 while len(arcProUserNames) != 0: # basically keeps looping through list of users with ArcPro licenses until that list has no people left in it.  Kind of brute force approach and can get stuck if there are errors but...
-    revokeArcProLicense(arcProUserNames)
+    migrateArcProLicense(arcProUserNames)
 else:
     pass
 
