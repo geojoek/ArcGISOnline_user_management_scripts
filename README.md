@@ -9,3 +9,6 @@ To iterate through list of e-mails, check if a user is associated with that e-ma
 
 <strong>arcgis_online_deauthhorize_Pro.py</strong><br>
 Script that calls up list of users authorized for ArcGIS Pro, iterates through that list, and revokes all licenses and entitlements for users who have not logged into ArcGIS online for over a year
+
+<strong>ArcGIS_Online_GIS_Professional_migration.py</strong><br>
+If you manage an ArcGIS Online organization or Portal under the ESRI Higher Education license program, this script is to migrate your users to a GIS Professional Advanced user type.  It goes through a list of your users who already have ArcGIS Pro licenses, revokes them, updates the User Type, and adds add-on licenses for all of the ArcPro extensions to each account.  It then goes through all of your AGOL organization members who aren't licensed for ArcPro and updates their user type to GIS Professional Advanced.
